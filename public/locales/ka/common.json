@@ -1,0 +1,33 @@
+{
+  "form": {
+    "title": "ანკეტის შექმნა",
+    "register": "რეგისტრაცია",
+    "name": "სახელი",
+    "surname": "გვარი",
+    "email": "ელ.ფოსტა",
+    "password": "პაროლი",
+    "submit": "გაგზავნა",
+    "reset": "გაუქმება",
+    "required_field": "ეს ველი აუცილებელია",
+    "invalid_email": "გთხოვთ შეიყვანოთ სწორი ელ.ფოსტა",
+    "first_name_required": "სახელის ველი აუცილებელია",
+    "email_required": "ელ.ფოსტის ველი აუცილებელია",
+    "invalid_email_address": "არასწორი ელ.ფოსტის მისამართი",
+    "confirm_password": "გთხოვთ დაადასტუროთ პაროლი",
+    "passwords_do_not_match": "პაროლები არ ემთხვევა",
+    "creating_account": "მიმდინარეობს ანგარიშის შექმნა...",
+    "sign_up": "რეგისტრაცია",
+    "account_created_successfully": "ანგარიში წარმატებით შეიქმნა! გთხოვთ შეხვიდეთ სისტემაში",
+    "registration_failed": "რეგისტრაცია ვერ შესრულდა",
+    "failed_to_sign_up": "რეგისტრაცია წარუმატებელია"
+  },
+  "navigation": {
+    "home": "მთავარი",
+    "about": "ჩვენს შესახებ",
+    "contact": "კონტაქტი"
+  },
+  "languages": {
+    "en": "ინგლისური",
+    "ka": "ქართული"
+  }
+}

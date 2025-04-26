@@ -1,0 +1,33 @@
+{
+  "form": {
+    "title": "Create Form",
+    "register": "Register",
+    "name": "Name",
+    "surname": "Surname",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Submit",
+    "reset": "Reset",
+    "required_field": "This field is required",
+    "invalid_email": "Please enter valid email",
+    "first_name_required": "First name is required",
+    "email_required": "Email is required",
+    "invalid_email_address": "Invalid email address",
+    "confirm_password": "Please confirm your password",
+    "passwords_do_not_match": "Passwords do not match",
+    "creating_account": "Creating account...",
+    "sign_up": "Sign up",
+    "account_created_successfully": "Account created successfully! Please log in",
+    "registration_failed": "Registration failed",
+    "failed_to_sign_up": "Failed to sign up"
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "languages": {
+    "en": "English",
+    "ka": "Georgian"
+  }
+}
