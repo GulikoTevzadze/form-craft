@@ -9,6 +9,8 @@ import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 
 export default function SignInForm() {
+
+  const { t } = useT('common')
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
@@ -53,7 +55,7 @@ export default function SignInForm() {
         onSubmit={handleSubmit(onHandleSubmit)}
       >
         <div className="w-full mb-2.5 flex flex-col gap-1.5">
-          <Label htmlFor="email">Email</Label>
+          <Label htmlFor="email">{t('form.email')}</Label>
           <Input
             type="email"
             id="email"
@@ -70,7 +72,7 @@ export default function SignInForm() {
           {errors.email && <span className="text-red-500 text-sm">{errors.email.message}</span>}
         </div>
         <div className="w-full mb-2.5 flex flex-col gap-1.5">
-          <Label htmlFor="password">Password</Label>
+          <Label htmlFor="password">{t('form.password')}</Label>
           <Input
             type="password"
             id="password"

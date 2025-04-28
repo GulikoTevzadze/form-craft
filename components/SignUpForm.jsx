@@ -7,12 +7,12 @@ import { useForm } from "react-hook-form";
 import { cn } from "@/lib/utils";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
-import { useTranslation } from "next-i18next";
+import { useT } from "@/app/i18n/client";
 
 export default function SignUpForm() {
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
-  const { t } = useTranslation('common')
+  const { t } = useT('common')
 
   const {
     register,
@@ -24,6 +24,7 @@ export default function SignUpForm() {
   const password = watch("password");
 
   const onHandleSubmit = async (data) => {
+    console.log("Submitting data:", data);
     setIsLoading(true);
     try {
       console.log("Submitting data:", data);
@@ -66,60 +67,63 @@ export default function SignUpForm() {
             <Label htmlFor="firstName">{t('form.name')} </Label>
             <Input
               id="firstName"
-              placeholder="First name"
+              placeholder={t('form.name')}
               {...register("firstName", { required: true })}
             />
             {errors.firstName && (
-              <span className="text-red-500 text-sm">First name is required</span>
+              <span className="text-red-500 text-sm">{t('form.first_name_required')}</span>
             )}
           </div>
           <div className="w-full mb-2.5 flex flex-col gap-1.5">
-            <Label htmlFor="lastName">Last Name </Label>
+            <Label htmlFor="lastName">{t('form.surname')}</Label>
             <Input
               id="lastName"
-              placeholder="Last name"
+              placeholder={t('form.surname')}
               {...register("lastName")}
             />
+            {errors.lastName && (
+              <span className="text-red-500 text-sm">{t('form.last_name_required')}</span>
+            )}
           </div>
         </div>
         <div className="w-full mb-2.5 flex flex-col gap-1.5">
-          <Label htmlFor="email">Email</Label>
+          <Label htmlFor="email">{t('form.email')}</Label>
           <Input
             className={cn(errors.email ? "border-red-500" : "")}
             id="email"
-            placeholder="Email"
+            placeholder={t('form.email')}
             {...register("email", {
-              required: { value: true, message: "Email is required" },
+              required: { value: true, message: t('form.email_required') },
               pattern: {
                 value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                message: "Invalid email address",
+                message: t('form.invalid_email_address'),
               },
             })}
           />
           {errors.email && <span className="text-red-500 text-sm">{errors.email.message}</span>}
         </div>
         <div className="w-full mb-2.5 flex flex-col gap-1.5">
-          <Label htmlFor="password">Password</Label>
+          <Label htmlFor="password">{t('form.password')}</Label>
           <Input
             type="password"
             id="password"
-            placeholder="Password"
+            placeholder={t('form.password')}
             className={cn(errors.password ? "border-red-500" : "")}
             {...register("password", {
-              required: { value: true, message: "Password is required" }
+              required: { value: true, message: t('form.password_required') }
             })}
           />
           {errors.password && <span className="text-red-500 text-sm">{errors.password.message}</span>}
         </div>
         <div className="w-full mb-2.5 flex flex-col gap-1.5">
-          <Label htmlFor="confirmPassword">Confirm Password</Label>
+          <Label htmlFor="confirmPassword">{t('form.confirmPassword')}</Label>
           <Input
             type="password"
             id="confirmPassword"
-            placeholder="Confirm Password"
+            placeholder={t('form.confirmPassword')}
             className={cn(errors.confirmPassword ? "border-red-500" : "")}
             {...register("confirmPassword", {
-              required: { value: true, message: "Please confirm your password" },
+              required: { value: true, message: t('form.passwords_do_not_match') },
               validate: value => value === password || "Passwords do not match"
             })}
           />

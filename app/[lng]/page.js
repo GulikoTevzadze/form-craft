@@ -1,10 +1,15 @@
-import Header from "@/components/Header"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import Link from "next/link"
-export default function Home() {
-  return (<>
+"use client";
+import Header from "@/components/Header";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import Link from "next/link";
+import { useT } from "@/app/i18n/client";
 
-    {/* <Tabs defaultValue="sign-in">
+export default function Home() {
+  const { t } = useT("common");
+  return (
+    <>
+      {t("form.title")}
+      {/* <Tabs defaultValue="sign-in">
       <TabsList>
         <TabsTrigger value="sign-in">Sign In</TabsTrigger>
         <TabsTrigger value="sign-up">Sign Up</TabsTrigger>
@@ -17,6 +22,6 @@ export default function Home() {
       </TabsContent>
     </Tabs>
      */}
-  </>)
+    </>
+  );
 }
-

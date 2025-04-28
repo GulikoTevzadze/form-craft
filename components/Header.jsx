@@ -8,8 +8,7 @@ export default function Header() {
   return (
     <header className="flex justify-between items-center p-4">
       <div>
-        <Link href="/"> forms
-        </Link>
+        <Link href="/"> forms</Link>
         <Link href="/users">Users</Link>
       </div>
       <SignUpForm />
@@ -19,7 +18,6 @@ export default function Header() {
         <ThemeSwitcher />
         <SignOut />
       </div>
-
     </header>
-  )
+  );
 }

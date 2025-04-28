@@ -17,14 +17,15 @@ datasource db {
 
 model User {
   id        String     @id @default(cuid())
-  name      String
+  fisrtName  String
+  lastName  String
   email     String     @unique
   password  String
   createdAt DateTime   @default(now())
   updatedAt DateTime   @updatedAt
   status    Status     @default(ACTIVE)
   role      Role       @default(USER)
-  posts     Post[]     // Связь с постами (только для авторов)
+  posts     Post[]     
 }
 
 enum Status {
